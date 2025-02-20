@@ -14,7 +14,7 @@ function Dashboard() {
       <h2>{userDetails.firstName}
           {userDetails.lastName}
       </h2>
-      <img src={`http://localhost:9090/${userDetails.profilePic}`}></img>
+      <img src={`/${userDetails.profilePic}`}></img>
     </div>
   )
  };

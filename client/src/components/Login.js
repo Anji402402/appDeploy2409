@@ -28,7 +28,7 @@ function Login() {
           
      };
 
-     let JSONData = await fetch("http://localhost:9090//validateToken",reqOptions);
+     let JSONData = await fetch("//validateToken",reqOptions);
     
     let JSOData = await JSONData.json();
     console.log(JSOData);
@@ -58,7 +58,7 @@ let onLogin = async ()=>{
           
      };
 
-     let JSONData = await fetch("http://localhost:9090/login",reqOptions);
+     let JSONData = await fetch("/login",reqOptions);
     
     let JSOData = await JSONData.json();
     console.log(JSOData);

@@ -52,7 +52,7 @@ function Signup() {
           body:dataTOSend,
      };
 
-     let JSONData = await fetch("http://localhost:9090/signup",
+     let JSONData = await fetch("/signup",
      reqOptions);
     
     let JSOData = await JSONData.json();
@@ -82,7 +82,7 @@ let onSignupUsingURLE = async ()=>{
           headers:myHeaders,
      };
 
-     let JSONData = await fetch("http://localhost:9090/singnup",reqOptions);
+     let JSONData = await fetch("/singnup",reqOptions);
     
     let JSOData = await JSONData.json();
 
