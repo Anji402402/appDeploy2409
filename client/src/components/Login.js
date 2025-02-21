@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react"
 import { Link, useNavigate } from "react-router-dom";
 import {useDispatch} from "react-redux";
+import axios from "axios";
 
 function Login() {
      let navigate = useNavigate();
@@ -28,7 +29,7 @@ function Login() {
           
      };
 
-     let JSONData = await fetch("/validateToken",reqOptions);
+     let JSONData = await axios("/validateToken",dataTOSend);
     
     let JSOData = await JSONData.json();
     console.log(JSOData);
@@ -58,7 +59,7 @@ let onLogin = async ()=>{
           
      };
 
-    let JSONData = await fetch("/login", reqOptions);
+    let JSONData = await axios("/login", dataTOSend);
     let JSOData = await JSONData.json();
     console.log(JSOData);
 

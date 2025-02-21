@@ -1,5 +1,6 @@
 import React, { useRef,useState } from 'react'
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 
 function Signup() {
@@ -52,8 +53,8 @@ function Signup() {
           body:dataTOSend,
      };
 
-     let JSONData = await fetch("/signup",
-     reqOptions);
+     let JSONData = await axios("/signup",
+     dataTOSend);
     
     let JSOData = await JSONData.json();
      console.log(JSOData.msg)
@@ -82,7 +83,7 @@ let onSignupUsingURLE = async ()=>{
           headers:myHeaders,
      };
 
-     let JSONData = await fetch("/singnup",reqOptions);
+     let JSONData = await ("/singnup",reqOptions);
     
     let JSOData = await JSONData.json();
 
