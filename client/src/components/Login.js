@@ -58,8 +58,7 @@ let onLogin = async ()=>{
           
      };
 
-     let JSONData = await fetch("/login",reqOptions);
-    
+    let JSONData = await fetch("/login", reqOptions);
     let JSOData = await JSONData.json();
     console.log(JSOData);
 
