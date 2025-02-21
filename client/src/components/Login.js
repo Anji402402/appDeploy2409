@@ -29,17 +29,17 @@ function Login() {
           
      };
 
-     let JSONData = await axios("/validateToken",dataTOSend);
+     let JSONData = await axios.post("/validateToken",dataTOSend);
     
-    let JSOData = await JSONData.json();
-    console.log(JSOData);
+    //let JSOData = await JSONData.json();
+    console.log(JSONData.data);
 
-    if(JSOData.status == "success"){
+    if(JSONData.data.status == "success"){
 
      //localStorage.setItem("token",JSOData.data.token)
      // localStorage.setItem("email",emailInputRef.current.value);
      // localStorage.setItem("password",passwordInputRef.current.value);
-     dispatch({type: "login",data:JSOData.data});
+     dispatch({type: "login",data:JSONData.data.data});
      navigate("/dashboard");
      }
 }
@@ -53,24 +53,24 @@ let onLogin = async ()=>{
      
 
 
-     let reqOptions = {
-          method:"POST",
-          body:dataTOSend,
+     // let reqOptions = {
+     //      method:"POST",
+     //      body:dataTOSend,
           
-     };
+     // };
 
-    let JSONData = await axios("/login", dataTOSend);
-    let JSOData = await JSONData.json();
-    console.log(JSOData);
+    let JSONData = await axios.post("/login", dataTOSend);
+    //let JSOData = await JSONData.json();
+    console.log(JSONData.data);
 
-    if(JSOData.status == "success"){
+    if(JSONData.data.status == "success"){
 
-     localStorage.setItem("token",JSOData.data.token)
+     localStorage.setItem("token",JSONData.data.token)
      // localStorage.setItem("email",emailInputRef.current.value);
      // localStorage.setItem("password",passwordInputRef.current.value);
-     dispatch({type: "login",data:JSOData.data});
+     dispatch({type: "login",data:JSONData.data.data});
      navigate("/dashboard");
-     alert(JSOData.msg)
+     alert(JSONData.data.msg)
      }
  };
   return (

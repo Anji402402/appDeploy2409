@@ -48,17 +48,17 @@ function Signup() {
           dataTOSend.append("profilePic",profilePiCInputRef.current.files[i]);
      }
 
-     let reqOptions = {
-          method:"POST",
-          body:dataTOSend,
-     };
+     // let reqOptions = {
+     //      method:"POST",
+     //      body:dataTOSend,
+     // };
 
-     let JSONData = await axios("/signup",
+     let JSONData = await axios.post("/signup",
      dataTOSend);
     
-    let JSOData = await JSONData.json();
-     console.log(JSOData.msg)
-    alert(JSOData.msg);
+//     let JSOData = await JSONData.json();
+     console.log(JSONData.msg)
+    alert(JSONData.msg);
 };
       //USING URLE ENCODE
 let onSignupUsingURLE = async ()=>{
@@ -77,17 +77,17 @@ let onSignupUsingURLE = async ()=>{
      let myHeaders =new Headers();
      
      myHeaders.append("content-type", "application/x-www-form-urlencoded"); //browser to collecting url
-     let reqOptions = {
-          method:"POST",
-          body:dataTOSend,
-          headers:myHeaders,
-     };
+     // let reqOptions = {
+     //      method:"POST",
+     //      body:dataTOSend,
+     //      headers:myHeaders,
+     // };
 
-     let JSONData = await axios ("/singnup",reqOptions);
+     let JSONData = await axios.post ("/singnup",dataTOSend);
     
-    let JSOData = await JSONData.json();
+//     let JSOData = await JSONData.json();
 
-    console.log(JSOData.msg);
+    console.log(JSONData.msg);
 };
 
 return (
