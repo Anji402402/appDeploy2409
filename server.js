@@ -5,8 +5,10 @@ const multer = require ("multer");
 const path =require("path");
 const jwt = require("jsonwebtoken");
 const app = express();
+const Schema = require ("./model/Schema");
 app.use(cors());
 app.use(express.json());
+app.use("/schema",Schema)
 // app.use(express.urlencoded());
 app.use("/uploads", express.static("uploads"));
 app.use(express.static(path.join(__dirname, "./client/build")));
@@ -150,17 +152,17 @@ app.post("/validateToken",upload.none(), async(req,res)=>{
 
 });
 
-let userSchema = new mongoose.Schema({
-     firstName:String,
-     lastName:String,
-     age:Number,
-     email:String,
-     password:String,
-     mobileNo:String,
-     profilePic:String
-})
-let user = new mongoose.model("users",userSchema,
-     "users");
+// let userSchema = new mongoose.Schema({
+//      firstName:String,
+//      lastName:String,
+//      age:Number,
+//      email:String,
+//      password:String,
+//      mobileNo:String,
+//      profilePic:String
+// })
+// let user = new mongoose.model("users",userSchema,
+//      "users");
 
 let connectToMDB = async()=>{
      try{
