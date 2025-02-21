@@ -70,8 +70,6 @@ let onLogin = async ()=>{
      // localStorage.setItem("password",passwordInputRef.current.value);
      dispatch({type: "login",data:JSOData.data});
      navigate("/dashboard");
-
-
      alert(JSOData.msg)
      }
  };

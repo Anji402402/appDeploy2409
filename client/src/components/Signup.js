@@ -83,7 +83,7 @@ let onSignupUsingURLE = async ()=>{
           headers:myHeaders,
      };
 
-     let JSONData = await ("/singnup",reqOptions);
+     let JSONData = await axios ("/singnup",reqOptions);
     
     let JSOData = await JSONData.json();
 
