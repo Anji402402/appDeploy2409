@@ -10,6 +10,7 @@ function Login() {
      let dispatch = useDispatch();
      
      useEffect(()=>{
+          axios.defaults.baseURL="";
           if(localStorage.getItem("token")){
                onValidateToken();
                // emailInputRef.current.value = localStorage.getItem("email");
@@ -23,11 +24,11 @@ function Login() {
           dataTOSend.append("token",localStorage.getItem("token"));
 
           
-     let reqOptions = {
-          method:"POST",
-          body:dataTOSend,
+     // let reqOptions = {
+     //      method:"POST",
+     //      body:dataTOSend,
           
-     };
+     // };
 
      let JSONData = await axios.post("/validateToken",dataTOSend);
     

@@ -58,7 +58,7 @@ app.post("/signup", upload.single("profilePic"),async (req,res)=>{
 app.post("/login",upload.none(), async(req,res)=>{
      console.log(req.body);
 
-     let useArr = await user.find().and({email: req.body.email});
+     let useArr = await User.find().and({email: req.body.email});
      if(useArr.length > 0){
            if(useArr[0].password == req.body.password){
 

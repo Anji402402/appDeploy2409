@@ -1,9 +1,15 @@
-import React, { useRef,useState } from 'react'
+import React, { useEffect, useRef,useState } from 'react'
 import { Link } from 'react-router-dom';
 import axios from "axios";
 
 
 function Signup() {
+
+     useEffect(()=>{
+          axios.defaults.baseURL="";
+
+     },[])
+
      let firstNameInputRef =useRef();
      let lastNameInputRef =useRef();
      let ageInputRef =useRef();
